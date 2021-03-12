@@ -1,0 +1,175 @@
+body {
+    font-family: 'EB Garamond', serif;
+}
+body.normal {
+    height: 165.73px;
+    width: 331.47px;
+}
+
+body.more {
+    height: 440.5px;
+    width: 331.47px;
+}
+
+div#moreContent {
+    display: none;
+}
+
+button:focus {
+    outline: transparent;
+}
+
+button#show-more {
+    margin-top: 25px;
+    background-color: transparent;
+    border: transparent;
+}
+h1 {
+    text-align: center;
+    font-size: 16.25px;
+}
+
+h2 {
+    margin-left: 30px;
+    font-size: 12.88px;
+    font-weight: normal;
+}
+
+img#rating {
+    max-width: 250px;
+    max-height: 100px;
+}
+
+img#caret {
+    max-width: 30px;
+    max-height: 30px;
+    height: 16px;
+    width: 30px;
+}
+
+div.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+div.tagBox ul{
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style: none;
+    padding-left: 0;
+    margin-left: 30px;
+}
+
+
+div.tagBox ul li {
+    font-size: 9.66px;
+    display: inline;
+    margin-right: 10px;
+    margin-bottom: 7px;
+    margin-left: 0;
+    padding: 5px;
+}
+
+div.tagBox ul li.good {
+    background-color: #94B78F;
+}
+
+div.tagBox ul li.bad {
+    background-color: #FFA3A3;
+}
+
+button.link-button {
+    font-size: 12px;
+    background-color: #F5EFE2;
+    border-radius: 74.04px;
+    border-width: 1px;
+    font-weight: normal;
+    border-style: solid;
+    padding: 7px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    box-shadow: none;
+}
+
+div.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+div.buttonContainer button{
+    margin-right: 10px;
+}
+
+div#alternatives {
+    display: none;
+    flex-direction: column;
+}
+
+div.reccommendationContainer {
+    flex: 1;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+img#brandLogo {
+    max-width: 50px;
+    max-height: 30px;
+    margin-right: 30px;
+}
+
+div.rightItem p{
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+div.back-Title {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+}
+
+button#backArrow {
+    background-color: transparent;
+    border: transparent;
+}
+
+button#backArrow img{
+    max-height: 15px;
+    max-width: 15px;
+}
+
+button#closeButton {
+    background-color: transparent;
+    border: transparent;
+    float: right;
+}
+
+button#closeButton img{
+    max-height: 15px;
+    max-width: 15px;
+}
+
+button#closeButton2 {
+    background-color: transparent;
+    border: transparent;
+    float: right;
+}
+
+button#closeButton2 img{
+    max-height: 15px;
+    max-width: 15px;
+}
+
