@@ -8,7 +8,7 @@ https://www.google.com/chrome/
 
 3. Visit "chrome://extensions/" on Google Chrome
 
-4. Click "Load unpacked", and select the current directory as the extension directory.
+4. Click "Load unpacked", and select the "rootExtension" directory as the extension directory.
 
 5. The chrome extension should now be loaded onto chrome. The title of the extension should be "Root Chrome Extension 1.0", and the details should say "Shows ethical ratings for various online clothing brands".
 
