@@ -6,7 +6,7 @@ https://www.google.com/chrome/
 
 2. Clone the repository
 
-3. Visit chrome://extensions/
+3. Visit "chrome://extensions/" on Google Chrome
 
 4. Click "Load unpacked", and select the current directory as the extension directory.
 
