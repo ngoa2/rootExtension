@@ -290,13 +290,18 @@ let badTags = [
 
   function createTag(tagName) {
     let tag = document.createElement("li");
+    let img = document.createElement("img");
     if (goodTags.includes(tagName)) {
       tag.className += "good";
+      img.src = "./images/plus-sign.png"
+      img.id = "tag-img"
     } else {
       tag.className += "bad";
+      img.src = "./images/minus-sign.png"
+      img.id = "tag-img"
     }
-    tag.innerHTML = tagName;
-
+    tag.append(img)
+    tag.innerHTML += tagName
     return tag;
   }
 

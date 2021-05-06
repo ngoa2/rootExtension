@@ -1,5 +1,5 @@
 body {
-    font-family: 'EB Garamond', serif;
+    font-family: 'Karla', sans-serif;
 }
 body.normal {
     height: 165.73px;
@@ -7,8 +7,9 @@ body.normal {
 }
 
 body.more {
-    height: 460.5px;
+    display: flex;
     width: 331.47px;
+    margin-bottom: 30px;
 }
 
 div#moreContent {
@@ -25,6 +26,7 @@ button#show-more {
     border: transparent;
 }
 h1 {
+    font-family: 'EB Garamond', serif;
     text-align: center;
     font-size: 16.25px;
 }
@@ -33,6 +35,8 @@ h2 {
     margin-left: 30px;
     font-size: 12.88px;
     font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 7px;
 }
 
 img#rating {
@@ -64,11 +68,14 @@ div.tagBox ul{
     list-style: none;
     padding-left: 0;
     margin-left: 30px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 
 div.tagBox ul li {
     font-size: 9.66px;
+    font-family: ;
     display: inline;
     margin-right: 10px;
     margin-bottom: 7px;
@@ -173,3 +180,26 @@ button#closeButton2 img{
     max-width: 15px;
 }
 
+
+img#info-blurb {
+    margin-top: 7px;
+    max-height: 16.81px;
+    max-width: 16.81px;
+    justify-self: center;
+    padding-left: 5px;
+    align-self: center;
+    text-align: center;
+}
+
+.tag-header {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin-bottom: 0px;
+}
+
+#tag-img {
+    max-width: 7px;
+    max-height: 7px;
+    padding-right: 7px;
+}
