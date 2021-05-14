@@ -318,7 +318,7 @@ let badTags = [
             }
           }
           let logoSrc = "https://logo.clearbit.com/" + brandBase
-          createBrandRec(brandName, logoSrc)
+          createBrandRec(brandName, logoSrc, brandLink)
         }
       }
     }
@@ -354,7 +354,7 @@ let badTags = [
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  function createBrandRec(name, logoSrc) {
+  function createBrandRec(name, logoSrc, link) {
     let alternativesList = document.getElementById("recommendations")
 
     let rContainer = document.createElement("div")
@@ -387,10 +387,15 @@ let badTags = [
     webButton.classList.add("link-button")
     webButton.type = "button"
 
+    let viewWebsiteLink = document.createElement("a")
+    viewWebsiteLink.href = link
+    viewWebsiteLink.target = "_blank"
     webButton.innerHTML = "View Website"
 
     buttonDiv.appendChild(infoButton)
-    buttonDiv.appendChild(webButton)
+
+    viewWebsiteLink.appendChild(webButton)
+    buttonDiv.appendChild(viewWebsiteLink)
 
     rightItem.append(buttonDiv)
     
