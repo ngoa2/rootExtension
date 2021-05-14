@@ -8,13 +8,19 @@
 
   </head>
   <body class = "normal">
+
     <div id = "alternatives">
       <div class = "back-Title">
         <button id = "backArrow"><img src = "./images/backArrow.png"/></button>
         <h1 id = "alternatives-title">Browse Sustainable Alternatives For ...</h1>
         <button id = "closeButton"><img src = "./images/close.png"/></button>
       </div>
-      <div class = "reccommendationContainer">
+      <div id = "recommendations">
+
+      </div>
+      <a id = "clearbit-logo" href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
+
+      <!-- <div class = "reccommendationContainer">
         <div class = "leftItem">
           <img id = "brandLogo" src = "./images/tonle.png/"/>
         </div>
@@ -26,39 +32,45 @@
             <button class = "link-button">View Website</button>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div class = "reccommendationContainer">
-        <div class = "leftItem">
-          <img id = "brandLogo" src = "./images/tonle.png/"/>
-        </div>
-
-        <div class = "rightItem">
-            <p>tonle</p>
-          <div>
-            <button class = "link-button">More Information</button>
-            <button class = "link-button">View Website</button>
-          </div>
-        </div>
       </div>
+      
     </div>
+    
+
+
 
     <div id = "ratings">
         <button id = "closeButton2"><img src = "./images/close.png"/></button>
+
         <div class = "container">
+          <div id="loader"></div>
+            <div id = "unrated">
+              <h1>Looks like we haven't rated this <br> brand yet!</h1>
+              <p>Fill out the form below to put that brand on <br> our priority list to be added.</p>
+              <input type="text" placeholder="Brand Name"/>
+              <p>Leave your email below if you want to be <br> notified once the brand has been rated!</p>
+              <input type="text" placeholder="Your Email"/>
+              <button id = "submit" class = "link-button">Submit</button>
+            </div>
+            
+            <div id = "rated" class = "container">
+              <h1 id = "rating-title"></h1>
+              <img id = "rating" src = './images/red-rating-bar.png'/>
+              <button id="show-more"><img id = "caret" src = './images/Vector.png'></button>
+          </div>
 
-            <h1 id = "rating-title">.</h1>
-
-            <img id = "rating" src = './images/red-rating-bar.png'/>
-
-            <button id="show-more"><img id = "caret" src = './images/Vector.png'></button>
         </div>
-
         <div id = "moreContent">
           <div class = "tagBox">
             <div class = "tag-header">
               <h2>Sustainable materials</h2>
-              <img id = "info-blurb" src = "./images/informationblurb.png">
+              <div class = "tooltip"><img id = "info-blurb" src = "./images/informationblurb.png">
+                <span class="tooltiptext">
+                  <p>This category focuses on information describing the materials that are being used when making the clothing. We consider the use of animal products and the company's animal welfare policies as well as their usage and disposal of water, chemicals, and textiles.</p>
+                </span>
+              </div>
             </div>
             <ul id = "sus-tags">
             </ul>
@@ -67,7 +79,11 @@
           <div class = "tagBox">
             <div class = "tag-header">
               <h2>Ethical Practices</h2>
-              <img id = "info-blurb" src = "./images/informationblurb.png">
+              <div class = "tooltip"><img id = "info-blurb" src = "./images/informationblurb.png">
+              <span class="tooltiptext">
+                <p>This category focuses on information describing how the company treats their workers. This includes policies on payment of a living wage, practices on child labor, non-discriminatory policies in place, as well as worker protection from the impacts of COVID-19.</p>
+              </span>
+            </div>
             </div>
             <ul id = "eth-tags">
 
@@ -77,8 +93,11 @@
           <div class = "tagBox">
             <div class = "tag-header">
               <h2>Supply chain transparency</h2>
-              <img id = "info-blurb" src = "./images/informationblurb.png">
-            </div>
+              <div class = "tooltip"><img id = "info-blurb" src = "./images/informationblurb.png">
+                <span class="tooltiptext">
+                  <p>This category focuses on information describing the materials that are being used when making the clothing. We consider the use of animal products and the company's animal welfare policies as well as their usage and disposal of water, chemicals, and textiles.</p>
+                </span>
+              </div>            </div>
             <ul id = "sup-tags">
               
             </ul>
@@ -90,6 +109,10 @@
           </div>
       </div>
     </div>
+
+
+
+
   </body>
   <script src="popup.js"></script>
 

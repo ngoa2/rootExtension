@@ -212,7 +212,6 @@ let badTags = [
     console.log("domain Name is:" + domainName)
 
     domainNameSplit = domainName.split(".")[1]
-    domainNameSplit = domainNameSplit
     domainNameSplit = capitalizeFirstLetter(domainNameSplit)
     if (domainNameSplit == "HM") {
       domainNameSplit = domainNameSplit.toUpperCase()
@@ -220,6 +219,10 @@ let badTags = [
     console.log(domainNameSplit)
 
     let failed = false
+
+    let ratedDiv = document.getElementById("rated")
+    let loader = document.getElementById("loader")
+    let unratedDiv = document.getElementById("unrated")
 
     fetch("https://api.root.quest/brandsearch?name="+domainNameSplit).then(d => {
       if (d.status >= 400) {
@@ -231,16 +234,30 @@ let badTags = [
     }).then(d => {
       if (failed) {
         throw new Error(d);
-      }
+      } else {
+
+      ratedDiv.style.display = "flex";
+      loader.style.display = "none";
+
       if (d.Average) {
         console.log(d.Average)
         let img = document.getElementById("rating")
-        if (d.Average > 1.0) {
-          img.src = "./images/yellow-rating-bar.png"
-        }
-
-        if (d.Average > 2.0) {
-          img.src = "./images/green-rating-bar.png"
+        if (d.Average == 1/9.0) {
+          img.src = "./images/1rating.png"
+        } else if (d.Average == 2.0/9.0) {
+          img.src = "./images/2rating.png"
+        } else if (d.Average == 3.0/9.0) {
+          img.src = "./images/3rating.png"
+        } else if (d.Average == 4.0/9.0) {
+          img.src = "./images/4rating.png"
+        } else if (d.Average >= 5.0/9.0 && d.Average < 7.0) {
+          img.src = "./images/5rating.png"
+        } else if (d.Average == 7.0/9.0) {
+          img.src = "./images/7rating.png"
+        } else if (d.Average == 8.0/9.0) {
+          img.src = "./images/8rating.png"
+        } else if (d.Average == 9.0/9.0) {
+          img.src = "./images/9rating.png"
         }
       }
       if (d.BrandName) {
@@ -254,6 +271,7 @@ let badTags = [
         let title2 = document.getElementById("alternatives-title")
         title2.innerHTML = "Browse Sustainable Alternatives For " + brand;
       }
+
   
       if (d.Tags) {
         let tagString = d.Tags;
@@ -281,11 +299,38 @@ let badTags = [
           }
         }
       }
+
+      if (d.AltBrands) {
+        linkString = d.AltBrands
+        linkArr = linkString.split(",")
+        
+        for (i = 0; i < linkArr.length; i++) {
+          let brandLink = linkArr[i].trim()
+          console.log(brandLink)
+          let brandBase = url_domain(brandLink)
+          console.log(brandBase)
+          let splitStr= brandBase.split(".")
+          let brandName = ""
+          for (j = 0; j < splitStr.length; j++) {
+            if (splitStr[j] != "www" && splitStr[j] != "com") {
+              brandName = splitStr[j]
+              break
+            }
+          }
+          let logoSrc = "https://logo.clearbit.com/" + brandBase
+          createBrandRec(brandName, logoSrc)
+        }
+      }
+    }
   
     }).catch(e => {
+      unratedDiv.style.display = "flex";
+      loader.style.display = "none";
     })
-
+    
  });
+
+ 
 
 
   function createTag(tagName) {
@@ -307,4 +352,50 @@ let badTags = [
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  function createBrandRec(name, logoSrc) {
+    let alternativesList = document.getElementById("recommendations")
+
+    let rContainer = document.createElement("div")
+    rContainer.classList.add("reccommendationContainer")
+
+    let leftItem = document.createElement("div")
+    leftItem.classList.add("leftItem")
+
+    let brandLogo = document.createElement("img")
+    brandLogo.id = "brandLogo"
+    brandLogo.src = logoSrc
+    leftItem.appendChild(brandLogo)
+
+
+    let rightItem = document.createElement("div")
+    rightItem.classList.add("rightItem")
+    let brandName = document.createElement("p")
+    brandName.innerHTML = name;
+
+    rightItem.appendChild(brandName)
+    
+    let buttonDiv = document.createElement("div")
+    
+    let infoButton = document.createElement("button")
+    infoButton.classList.add("link-button")
+    
+    infoButton.innerHTML = "More Information"
+
+    let webButton = document.createElement("button")
+    webButton.classList.add("link-button")
+    webButton.type = "button"
+
+    webButton.innerHTML = "View Website"
+
+    buttonDiv.appendChild(infoButton)
+    buttonDiv.appendChild(webButton)
+
+    rightItem.append(buttonDiv)
+    
+    rContainer.appendChild(leftItem)
+    rContainer.appendChild(rightItem)
+
+    alternativesList.appendChild(rContainer)
   }
