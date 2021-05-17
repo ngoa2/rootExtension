@@ -242,21 +242,21 @@ let badTags = [
       if (d.Average) {
         console.log(d.Average)
         let img = document.getElementById("rating")
-        if (d.Average == 1/9.0) {
+        if (d.Average == 1/3.0) {
           img.src = "./images/1rating.png"
-        } else if (d.Average == 2.0/9.0) {
+        } else if (d.Average == 2.0/3.0) {
           img.src = "./images/2rating.png"
-        } else if (d.Average == 3.0/9.0) {
+        } else if (d.Average == 3.0/3.0) {
           img.src = "./images/3rating.png"
-        } else if (d.Average == 4.0/9.0) {
+        } else if (d.Average == 4.0/3.0) {
           img.src = "./images/4rating.png"
-        } else if (d.Average >= 5.0/9.0 && d.Average < 7.0) {
+        } else if (d.Average >= 5.0/3.0 && d.Average < 7.0/3.0) {
           img.src = "./images/5rating.png"
-        } else if (d.Average == 7.0/9.0) {
+        } else if (d.Average == 7.0/3.0) {
           img.src = "./images/7rating.png"
-        } else if (d.Average == 8.0/9.0) {
+        } else if (d.Average == 8.0/3.0) {
           img.src = "./images/8rating.png"
-        } else if (d.Average == 9.0/9.0) {
+        } else if (d.Average == 9.0/3.0) {
           img.src = "./images/9rating.png"
         }
       }
