@@ -270,6 +270,10 @@ let badTags = [
         console.log("set innerHTML of second title")
         let title2 = document.getElementById("alternatives-title")
         title2.innerHTML = "Browse Sustainable Alternatives For " + brand;
+
+        let moInfo = document.getElementById("moInfo");
+        let homeLink = "https://root.quest/#/writeup/" + brand;
+        moInfo.href =  homeLink;
       }
 
   
